@@ -1,0 +1,29 @@
+# Course: CET 2390 - Operating Systems Laboratory
+# Author: William Shotts, The Linux Command Line (TLCL 19.01)
+# Topic:  Additions to ~/.bashrc (TLCL Ch. 11)
+# Version: book
+# Description: The lines the book adds to the bottom of ~/.bashrc, in their
+#              final form with the book's comments: a umask, a command
+#              history that skips repeats and keeps 1000 lines, and two
+#              aliases (l. and ll).
+# Use:    These are the book's lines to APPEND to ~/.bashrc. Never run this
+#         file as a script: a script runs in a child shell, so its umask,
+#         variables and aliases vanish the moment it ends. Back up first
+#         (cp ~/.bashrc ~/.bashrc.bak), add the lines at the bottom of
+#         ~/.bashrc, then reload it: source ~/.bashrc
+# Source: TLCL 19.01, chapter 11, "Using a Text Editor" (book name: none;
+#         Table 11-4 calls them "Additions to Our .bashrc"). This is the
+#         second listing, the one with comments. Below the line: the book's
+#         lines, unchanged. TLCL is licensed CC BY-NC-ND 3.0.
+# ---------------------------------------------------------------------------
+# Change umask to make directory sharing easier
+umask 0002
+
+# Ignore duplicates in command history and increase
+# history size to 1000 lines
+export HISTCONTROL=ignoredups
+export HISTSIZE=1000
+
+# Add some helpful aliases
+alias l.='ls -d .* --color=auto'
+alias ll='ls -l --color=auto'

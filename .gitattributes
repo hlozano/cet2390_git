@@ -1,0 +1,5 @@
+# Keep Linux line endings for every text file, even when the repository is checked out on Windows
+* text=auto eol=lf
+*.sh text eol=lf
+*.md text eol=lf
+*.txt text eol=lf

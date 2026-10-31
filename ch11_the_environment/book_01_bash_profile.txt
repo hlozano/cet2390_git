@@ -1,0 +1,26 @@
+# Course: CET 2390 - Operating Systems Laboratory
+# Author: William Shotts, The Linux Command Line (TLCL 19.01)
+# Topic:  What's in a startup file (TLCL Ch. 11)
+# Version: book
+# Description: The book's example of a login startup file, ~/.bash_profile,
+#              as a CentOS 6 system ships it. It reads ~/.bashrc if that file
+#              exists, then adds ~/bin to the end of PATH and exports PATH.
+# Use:    For reading only. Never run it as a script, and do not copy it into
+#         your home directory: bash reads startup files by itself when a shell
+#         starts. Mint and Ubuntu use ~/.profile instead of ~/.bash_profile;
+#         compare this file with yours: less ~/.profile
+# Source: TLCL 19.01, chapter 11, "What's in a Startup File?" (book name:
+#         .bash_profile). Below the line: the book's text, unchanged.
+#         TLCL is licensed CC BY-NC-ND 3.0.
+# ---------------------------------------------------------------------------
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/bin
+export PATH
